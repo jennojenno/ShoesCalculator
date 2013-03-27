@@ -6,7 +6,7 @@ Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 270 do
       %w(7 8 9 4 5 6 1 2 3 0 + / * -).each do |op|     
       #below this line is |op| 
         button op do         
-          append op
+          append op.to_f!
         end
       end #end op
       
@@ -21,7 +21,6 @@ Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 270 do
       button "x^2" do
         square
       end
-
     
       button "x^y" do
         power
@@ -61,6 +60,6 @@ Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 270 do
 
   def power
     @output.text = ""
-    @output.text = ((@output.text)_to_i) * @input.to_i
+    @output.text = @input.to_i ** input.to_i
   end  
 end
