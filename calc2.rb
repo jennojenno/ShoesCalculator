@@ -1,9 +1,9 @@
-Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 270 do
+Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 240 do
   stack :margin => 20 do
     @output = edit_line
     
     flow do
-      %w(7 8 9 4 5 6 1 2 3 0 + / * -).each do |op|     
+      %w(0 1 2 3 4 5 6 7 8 9 + / * -).each do |op|     
       #below this line is |op| 
         button op do         
           append op
@@ -15,18 +15,7 @@ Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 270 do
       end
 
       button "C" do
-        clear
-      end
-
-      button "x^2" do
-        square
-      end
-
-    
-      button "x^y" do
-        power
-      end
-
+        puts ""
     end
     
   end
@@ -50,17 +39,8 @@ Shoes.app :title => "My Amazing Calculator", :width => 170, :height => 270 do
   end
 
   def clear
-    @input = ""
     @output.text = ""
-
   end
+
   
-  def square
-    @output.text = @input.to_i * @input.to_i
-  end
-
-  def power
-    @output.text = ""
-    @output.text = ((@output.text)_to_i) * @input.to_i
-  end  
 end
